@@ -11,6 +11,15 @@
 |
 */
 
+//use Illuminate\Routing\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/admin/dashboard', 'AdminController@dashboard');
+
+// Admin category Routes
+Route::match(['get', 'post'], '/admin/add_category', 'CategoryController@addcategory' );
